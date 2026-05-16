@@ -1,0 +1,40 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ./ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  model-puller:
+    image: ollama/ollama:latest
+    container_name: model-puller
+    volumes:
+      - ./ollama_data:/root/.ollama
+    depends_on:
+      ollama:
+        condition: service_healthy
+    entrypoint: /bin/sh
+    command: -c "ollama pull llama3:8b"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: climate-debate-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      ollama:
+        condition: service_healthy
+      model-puller:
+        condition: service_completed_successfully
+    restart: unless-stopped
