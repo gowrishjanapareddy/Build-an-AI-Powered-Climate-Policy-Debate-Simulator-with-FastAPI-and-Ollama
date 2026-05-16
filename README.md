@@ -1,4 +1,4 @@
-# 🌍 Climate Policy Debate Simulator
+# Climate Policy Debate Simulator
 
 An advanced AI-powered multi-agent simulation that facilitates structured debates on global climate policy between representatives from the **USA**, **EU**, and **China**. 
 
@@ -6,7 +6,7 @@ This project leverages **Retrieval-Augmented Generation (RAG)** to ensure that e
 
 ---
 
-## 🚀 Features
+## Features
 
 -   **Multi-Agent Orchestration**: A turn-based debate system featuring three distinct AI personas, each with unique geopolitical perspectives and constraints.
 -   **RAG-Powered Arguments**: Agents dynamically retrieve relevant information from official climate policy documents stored in a **ChromaDB** vector database.
@@ -16,7 +16,7 @@ This project leverages **Retrieval-Augmented Generation (RAG)** to ensure that e
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 -   **Backend**: Python, FastAPI
 -   **AI Engine**: Ollama (llama3:8b)
@@ -26,7 +26,7 @@ This project leverages **Retrieval-Augmented Generation (RAG)** to ensure that e
 
 ---
 
-## 📥 Setup & Usage
+## Setup & Usage
 
 ### Prerequisites
 
@@ -61,7 +61,7 @@ This project leverages **Retrieval-Augmented Generation (RAG)** to ensure that e
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 ├── agents/             # AI agent logic and persona definitions
@@ -76,7 +76,7 @@ This project leverages **Retrieval-Augmented Generation (RAG)** to ensure that e
 
 ---
 
-## 🧪 Testing
+## Testing
 
 The project includes a suite of automated tests to verify API functionality and agent behavior.
 
@@ -84,9 +84,3 @@ The project includes a suite of automated tests to verify API functionality and 
 # Run tests inside the container
 docker-compose exec api pytest tests/
 ```
-
----
-
-## 📄 License
-
-This project is intended for educational and simulation purposes. Policy data is sourced from publicly available official documents.
